@@ -5,10 +5,12 @@ public class Order
     public int Id { get; }
     public string Name { get; private set; }
     public int Price {get; private set;}
+    public string Status { get; private set; }
 
-    public Order(string name, int price)
+    public Order(string name, int price, string status)
     {
         Name = name;
         Price = price;
+        Status = status;
     }
 }
