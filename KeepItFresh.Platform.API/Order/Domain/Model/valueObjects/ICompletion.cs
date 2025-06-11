@@ -12,5 +12,5 @@ public interface ICompletion
     
     void SendToCompleted();
     
-    void Dispose();
+    void Cancel();
 }

@@ -9,5 +9,6 @@ public enum EOrderStatus
     Pending,
     Preparing,
     Ready,
-    Completed
+    Completed,
+    Canceled
 }
