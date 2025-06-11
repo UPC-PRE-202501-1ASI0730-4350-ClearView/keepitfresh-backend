@@ -34,8 +34,4 @@
       <Folder Include="Controllers\" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="Order\" />
-    </ItemGroup>
-
 </Project>
