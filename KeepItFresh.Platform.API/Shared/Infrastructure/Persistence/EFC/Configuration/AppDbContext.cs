@@ -1,8 +1,8 @@
-using ACME.LearningCenterPlatform.API.Shared.Infrastructure.Persistence.EFC.Configuration.Extensions;
+using KeepItFresh.Platform.API.Shared.Infrastructure.Persistence.EFC.Configuration.Extensions;
 using EntityFrameworkCore.CreatedUpdatedDate.Extensions;
 using Microsoft.EntityFrameworkCore;
 
-namespace ACME.LearningCenterPlatform.API.Shared.Infrastructure.Persistence.EFC.Configuration;
+namespace KeepItFresh.Platform.API.Shared.Infrastructure.Persistence.EFC.Configuration;
 
 /// <summary>
 ///     Application database context
