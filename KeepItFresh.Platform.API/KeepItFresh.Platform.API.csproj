@@ -32,10 +32,17 @@
 
     <ItemGroup>
       <Folder Include="Controllers\" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <Folder Include="Order\" />
+      <Folder Include="Sensor\Application\Internal\CommandServices\" />
+      <Folder Include="Sensor\Domain\Model\Commands\" />
+      <Folder Include="Sensor\Domain\Model\Entities\" />
+      <Folder Include="Sensor\Domain\Model\Queries\" />
+      <Folder Include="Sensor\Domain\Model\ValueObjects\" />
+      <Folder Include="Sensor\Domain\Repositories\" />
+      <Folder Include="Sensor\Domain\Services\" />
+      <Folder Include="Sensor\Infrastructure\Persistance\EFC\Configuration\" />
+      <Folder Include="Sensor\Infrastructure\Persistance\EFC\Repositories\" />
+      <Folder Include="Sensor\Interfaces\REST\Resources\" />
+      <Folder Include="Sensor\Interfaces\REST\Transform\" />
     </ItemGroup>
 
 </Project>
