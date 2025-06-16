@@ -1,3 +1,5 @@
+using KeepItFresh.Platform.API.Order.Domain.Model.Commands;
+
 namespace KeepItFresh.Platform.API.Order.Domain.Model.Aggregates;
 
 public class Order
@@ -14,6 +16,11 @@ public class Order
     public Order(string name)
     {
         Name = name;
+    }
+
+    public Order(CreateOrderCommand command)
+    {
+        this.Name = command.Name;
     }
     
     
