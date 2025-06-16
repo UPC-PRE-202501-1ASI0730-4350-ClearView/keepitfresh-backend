@@ -10,9 +10,10 @@ public class Order
     public int Price { get; private set; }
     public EOrderStatus Status { get; private set; } = EOrderStatus.Pending;
 
-    public Order(int price, string status)
+    public Order(int price, EOrderStatus status)
     {
         Price = price;
+        Status = status;
     }
 
     private bool HasAllDishesWithStatus(EOrderStatus status)
