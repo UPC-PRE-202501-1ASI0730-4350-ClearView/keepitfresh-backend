@@ -4,6 +4,7 @@ namespace KeepItFresh.Platform.API.Order.Domain.Model.ValueObjects;
 /// Represents the status of an Order.
 /// </summary>
 
+
 public enum EOrderStatus
 {
     Pending,
