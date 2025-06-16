@@ -31,23 +31,9 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Controllers\" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <Folder Include="Inventory\Application\Internal\CommandServices\" />
-      <Folder Include="Inventory\Application\Internal\QueryService\" />
-      <Folder Include="Inventory\Domain\Model\Aggregates\" />
-      <Folder Include="Inventory\Domain\Model\Commands\" />
-      <Folder Include="Inventory\Domain\Model\Entities\" />
-      <Folder Include="Inventory\Domain\Model\Queries\" />
-      <Folder Include="Inventory\Domain\Repositories\" />
-      <Folder Include="Inventory\Domain\Services\" />
-      <Folder Include="Inventory\Infrastructure\Persistence\EFC\Configuration\Extensions\" />
-      <Folder Include="Inventory\Infrastructure\Persistence\EFC\Repositories\" />
-      <Folder Include="Inventory\Interfaces\REST\Resources\" />
-      <Folder Include="Inventory\Interfaces\REST\Transform\" />
-      <Folder Include="Order\" />
+      <Folder Include="IAM\Application\Internal\CommandServices\" />
+      <Folder Include="IAM\Application\Internal\OutboundServices\" />
+      <Folder Include="IAM\Infrastructure\" />
     </ItemGroup>
 
 </Project>
