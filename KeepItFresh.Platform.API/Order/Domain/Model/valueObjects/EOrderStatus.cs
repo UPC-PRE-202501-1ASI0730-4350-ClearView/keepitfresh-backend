@@ -1,4 +1,4 @@
-namespace KeepItFresh.Platform.API.Order.Domain.Model.valueObjects;
+namespace KeepItFresh.Platform.API.Order.Domain.Model.ValueObjects;
 
 /// <summary>
 /// Represents the status of an Order.
