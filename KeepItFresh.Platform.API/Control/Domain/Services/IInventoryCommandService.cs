@@ -10,5 +10,5 @@ public interface IInventoryCommandService
     Task<Inventory?> Handle(IncreaseQuantityCommand command);
     Task<Inventory?> Handle(UpdateProductOwnerCommand command);
     Task<Inventory?> Handle(UpdateSupplierOwnerCommand command); 
-    Task<Inventory?> Handle(DeleteInventoryCommand command);
+    Task Handle(DeleteInventoryCommand command);
 }
