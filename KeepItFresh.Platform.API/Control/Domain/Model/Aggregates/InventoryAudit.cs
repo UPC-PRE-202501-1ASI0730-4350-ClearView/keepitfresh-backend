@@ -1,9 +1,9 @@
 using System.ComponentModel.DataAnnotations.Schema;
 using EntityFrameworkCore.CreatedUpdatedDate.Contracts;
 
-namespace KeepItFresh.Platform.API.Inventory.Domain.Model.Aggregates;
+namespace KeepItFresh.Platform.API.Control.Domain.Model.Aggregates;
 
-public partial class Product : IEntityWithCreatedUpdatedDate
+public partial class Inventory : IEntityWithCreatedUpdatedDate
 {
     [Column("CreatedAt")] public DateTimeOffset? CreatedDate { get; set; }
     [Column("UpdatedAt")] public DateTimeOffset? UpdatedDate { get; set; }

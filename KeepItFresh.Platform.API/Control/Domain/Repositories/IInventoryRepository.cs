@@ -1,6 +1,6 @@
 using ACME.LearningCenterPlatform.API.Shared.Domain.Repositories;
 
-namespace KeepItFresh.Platform.API.Inventory.Domain.Repositories;
+namespace KeepItFresh.Platform.API.Control.Domain.Repositories;
 
 public interface IInventoryRepository : IBaseRepository<Model.Aggregates.Inventory>
 {

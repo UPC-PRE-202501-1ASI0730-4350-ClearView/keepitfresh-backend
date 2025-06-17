@@ -1,7 +1,7 @@
-using KeepItFresh.Platform.API.Inventory.Domain.Model.Commands;
-using KeepItFresh.Platform.API.Inventory.Domain.Model.ValueObjects;
+using KeepItFresh.Platform.API.Control.Domain.Model.Commands;
+using KeepItFresh.Platform.API.Control.Domain.Model.ValueObjects;
 
-namespace KeepItFresh.Platform.API.Inventory.Domain.Model.Aggregates;
+namespace KeepItFresh.Platform.API.Control.Domain.Model.Aggregates;
 
 public partial class Inventory
 {
