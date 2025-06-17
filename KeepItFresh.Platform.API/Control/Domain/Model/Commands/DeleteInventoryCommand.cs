@@ -1,3 +1,3 @@
 namespace KeepItFresh.Platform.API.Control.Domain.Model.Commands;
 
-public record DeleteInventoryCommand();
+public record DeleteInventoryCommand(int Id);
