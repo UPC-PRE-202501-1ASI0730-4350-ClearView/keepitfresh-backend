@@ -9,7 +9,7 @@ namespace KeepItFresh.Platform.API.Control.Infrastructure.Persistence.EFC.Reposi
 public class InventoryRepository(AppDbContext context) 
     : BaseRepository<Inventory>(context), IInventoryRepository
 {
-    public async Task<Inventory?> findByNameAync(string name)
+    public async Task<Inventory?> findByNameAsync(string name)
     {
         return await Context.Set<Inventory>().FirstOrDefaultAsync(p => p.Name == name);
     }
