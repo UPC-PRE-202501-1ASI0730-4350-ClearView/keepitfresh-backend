@@ -15,4 +15,24 @@ public class OrderCommandService(IOrderRepository repository, IUnitOfWork unitOf
         await unitOfWork.CompleteAsync();
         return order;
     }
+
+    public async Task<Orders?> Handle(DeleteOrderCommand command)
+    {
+        var order = await repository.FindByIdAsync(command.Id);
+        
+        if (order == null)
+            throw new ArgumentException("Order not found");
+
+        try
+        {
+            repository.Remove(order);
+            await unitOfWork.CompleteAsync();
+        }
+        catch (Exception e)
+        {
+            throw new Exception($"Failed to delete order {command.Id}", e);
+        }
+        
+        return order;
+    }
 }
