@@ -2,23 +2,23 @@ using KeepItFresh.Platform.API.Order.Domain.Model.Commands;
 
 namespace KeepItFresh.Platform.API.Order.Domain.Model.Aggregates;
 
-public class Order
+public class Orders
 {
     public int Id { get; }
     public string Name { get; private set; }
     public List<Dish> Dishes { get; private set; } = new List<Dish>();
 
-    public Order()
+    public Orders()
     {
         Name = string.Empty;
     }
     
-    public Order(string name)
+    public Orders(string name)
     {
         Name = name;
     }
 
-    public Order(CreateOrderCommand command)
+    public Orders(CreateOrderCommand command)
     {
         this.Name = command.Name;
     }

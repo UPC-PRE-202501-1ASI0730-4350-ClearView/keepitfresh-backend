@@ -6,9 +6,9 @@ using KeepItFresh.Platform.API.Shared.Infrastructure.Persistence.EFC.Repositorie
 namespace KeepItFresh.Platform.API.Order.Infrastructure.Repositories;
 
 public class OrderRepository(AppDbContext context)
-    : BaseRepository<Domain.Model.Aggregates.Order>(context), IOrderRepository
+    : BaseRepository<Orders>(context), IOrderRepository
 {
-    public Task<IEnumerable<Domain.Model.Aggregates.Order>> FindByNameAsync(string name)
+    public Task<IEnumerable<Orders>> FindByNameAsync(string name)
     {
         throw new NotImplementedException();
     }
