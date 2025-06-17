@@ -1,10 +1,11 @@
 using ACME.LearningCenterPlatform.API.Shared.Domain.Repositories;
+using KeepItFresh.Platform.API.Control.Domain.Model.Aggregates;
 
 namespace KeepItFresh.Platform.API.Control.Domain.Repositories;
 
-public interface IInventoryRepository : IBaseRepository<Model.Aggregates.Inventory>
+public interface IInventoryRepository : IBaseRepository<Inventory>
 {
-    Task<Model.Aggregates.Inventory?> findByNameAync(string name);
-    Task<IEnumerable<Model.Aggregates.Inventory>> findByProductIdAsync(int productId);
-    Task<IEnumerable<Model.Aggregates.Inventory>> findBySupplierIdAsync(int supplierId);
+    Task<Inventory?> findByNameAync(string name);
+    Task<IEnumerable<Inventory>> findByProductIdAsync(int productId);
+    Task<IEnumerable<Inventory>> findBySupplierIdAsync(int supplierId);
 }
