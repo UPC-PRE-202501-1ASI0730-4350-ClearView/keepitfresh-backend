@@ -33,6 +33,7 @@
     <ItemGroup>
       <Folder Include="Controllers\" />
       <Folder Include="Order\Domain\Model\Entities\" />
+      <Folder Include="Order\Domain\Model\ValueObjects\" />
       <Folder Include="Order\Infrastructure\Persistence\EFC\" />
     </ItemGroup>
 
