@@ -10,6 +10,7 @@ public class UpdateOrderCommandFromResourceAssembler
         return new UpdateOrderCommand(
             resource.Id,
             resource.Name,
+            resource.Dishes,
             resource.Price);
     }
 }

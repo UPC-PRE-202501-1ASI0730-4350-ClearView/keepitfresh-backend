@@ -10,7 +10,7 @@ public class CreateOrderCommandFromResourceAssembler
     {
         return new CreateOrderCommand(
             resource.Name,
-            resource.Price,
-            resource.DishesId);
+            resource.Dishes,
+            resource.Price);
     }
 }
