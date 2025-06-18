@@ -1,5 +1,6 @@
 using KeepItFresh.Platform.API.Shared.Infrastructure.Persistence.EFC.Configuration.Extensions;
 using EntityFrameworkCore.CreatedUpdatedDate.Extensions;
+using KeepItFresh.Platform.API.Order.Domain.Model.Aggregates;
 using Microsoft.EntityFrameworkCore;
 
 namespace KeepItFresh.Platform.API.Shared.Infrastructure.Persistence.EFC.Configuration;
@@ -9,6 +10,10 @@ namespace KeepItFresh.Platform.API.Shared.Infrastructure.Persistence.EFC.Configu
 /// </summary>
 public class AppDbContext(DbContextOptions options) : DbContext(options)
 {
+    
+    
+    public DbSet<Orders> Orders { get; set; }
+    
     protected override void OnConfiguring(DbContextOptionsBuilder builder)
     {
         // Add the created and updated interceptor
@@ -18,6 +23,11 @@ public class AppDbContext(DbContextOptions options) : DbContext(options)
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
+        
+        
+        builder.Entity<Orders>()
+            .HasKey(o => o.Id);  // Specify Id as primary key
+        
         base.OnModelCreating(builder);
 
         
