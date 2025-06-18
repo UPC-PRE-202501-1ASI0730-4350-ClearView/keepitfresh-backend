@@ -6,7 +6,7 @@ namespace KeepItFresh.Platform.API.Control.Interfaces.REST.Transform;
 
 public class InventoryResourceFromEntityAssembler
 {
-    public static InventoryResource ToInventoryResourceFromEntity(Inventory inventory)
+    public static InventoryResource ToResourceFromEntity(Inventory inventory)
     {
         return new InventoryResource(inventory.Id, new ProductId(inventory.ProductId), 
             new SupplierId(inventory.SupplierId), inventory.Name, inventory.Quantity);
