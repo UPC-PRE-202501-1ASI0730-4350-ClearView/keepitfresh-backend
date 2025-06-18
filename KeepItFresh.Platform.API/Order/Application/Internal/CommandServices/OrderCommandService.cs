@@ -16,6 +16,26 @@ public class OrderCommandService(IOrderRepository repository, IUnitOfWork unitOf
         return order;
     }
 
+    public async Task<Orders?> Handle(UpdateOrderCommand command)
+    {
+        var order = await repository.FindByIdAsync(command.OrderId);
+        
+        if (order == null)
+            throw new ArgumentException("Order not found");
+
+        try
+        {
+            repository.Update(order);
+            await unitOfWork.CompleteAsync();
+        }
+        catch (Exception e)
+        {
+            throw new Exception($"Failed to update order {command.OrderId}", e);
+        }
+
+        return order;
+    }
+
     public async Task<Orders?> Handle(DeleteOrderCommand command)
     {
         var order = await repository.FindByIdAsync(command.Id);
