@@ -7,4 +7,5 @@ public interface IOrderCommandService
 {
      public Task<Orders?> Handle(CreateOrderCommand command);
      public Task<Orders?> Handle(DeleteOrderCommand command);
+     public Task<Orders?> Handle(UpdateOrderCommand command);
 }
