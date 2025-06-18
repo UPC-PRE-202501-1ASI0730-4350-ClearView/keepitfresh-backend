@@ -14,6 +14,6 @@ public class OrderQueryService(IOrderRepository repository) : IOrderQueryService
 
     public async Task<Orders?> Handle(GetOrderByIdQuery query)
     {
-        return await repository.FindByIdAsync(query.id);
+        return await repository.FindByIdAsync((int)query.Id);    
     }
 }

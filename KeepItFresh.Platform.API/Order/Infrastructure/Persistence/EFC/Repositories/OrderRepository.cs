@@ -4,7 +4,7 @@ using KeepItFresh.Platform.API.Order.Domain.Repositories;
 using KeepItFresh.Platform.API.Shared.Infrastructure.Persistence.EFC.Repositories;
 using Microsoft.EntityFrameworkCore;
 
-namespace KeepItFresh.Platform.API.Order.Infrastructure.Repositories;
+namespace KeepItFresh.Platform.API.Shared.Infrastructure.Persistence.EFC.Repositories;
 
 public class OrderRepository(AppDbContext context)
     : BaseRepository<Orders>(context), IOrderRepository
@@ -14,7 +14,7 @@ public class OrderRepository(AppDbContext context)
         return await Context.Set<Orders>().Where(p => p.Name == name).ToListAsync();
     }
 
-    public async Task<IEnumerable<Orders>> FindByIdAsync(int id)
+    public async Task<IEnumerable<Orders>> FindByIdAsync(long id)
     {
         return await Context.Set<Orders>().Where(p => p.Id == id).ToListAsync();
     }

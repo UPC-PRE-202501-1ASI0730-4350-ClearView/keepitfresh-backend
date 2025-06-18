@@ -1,3 +1,3 @@
 namespace KeepItFresh.Platform.API.Order.Domain.Model.Queries;
 
-public record GetOrderByIdQuery(int id);
+public record GetOrderByIdQuery(long Id);
