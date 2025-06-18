@@ -21,7 +21,7 @@ public class OrderController (IOrderCommandService orderCommandService, IOrderQu
         Description = "Creates a new Order",
         OperationId = "CreateOrder")]
     [SwaggerResponse(StatusCodes.Status201Created, "The Order Was Created", typeof(OrderResource))]
-    public async Task<IActionResult> CreateOrder([FromBody] CreateOrderResource resource)
+    public async Task<ActionResult> CreateOrder([FromBody] CreateOrderResource resource)
     {
         var createOrderCommand = CreateOrderCommandFromResourceAssembler.ToCommandFromResource(resource);
 
@@ -41,7 +41,7 @@ public class OrderController (IOrderCommandService orderCommandService, IOrderQu
         OperationId = "GetOrderById")]
     [SwaggerResponse(StatusCodes.Status200OK, "The Order Was Found", typeof(OrderResource))]
     [SwaggerResponse(StatusCodes.Status400BadRequest, "Invalid Data")]
-    public async Task<IActionResult> GetOrderById([FromRoute] GetOrderByIdQuery query)
+    public async Task<ActionResult> GetOrderById([FromRoute] GetOrderByIdQuery query)
     {
         var getOrderByIdQuery = new GetOrderByIdQuery(query.Id);
         
@@ -81,7 +81,7 @@ public class OrderController (IOrderCommandService orderCommandService, IOrderQu
     [SwaggerResponse(StatusCodes.Status200OK, "The Order Was Updated", typeof(OrderResource))]
     [SwaggerResponse(StatusCodes.Status400BadRequest, "Invalid Data")]
     [SwaggerResponse(StatusCodes.Status404NotFound, "Order Not Found")]
-    public async Task<IActionResult> UpdateOrder([FromRoute] UpdateOrderCommand resource)
+    public async Task<ActionResult> UpdateOrder([FromRoute] UpdateOrderCommand resource)
     {
         if (resource.OrderId <= 0)
         {
@@ -99,6 +99,24 @@ public class OrderController (IOrderCommandService orderCommandService, IOrderQu
         return Ok(OrderResourceFromEntityAssembler.ToResourceFromEntity(result));
     }
     
+    
+    [HttpDelete("{id}")]
+    [SwaggerOperation(
+        Summary = "Deletes an Order by Id",
+        Description = "Deletes an Order with the given Id",
+        OperationId = "DeleteOrder")]
+    [SwaggerResponse(StatusCodes.Status204NoContent, "The Order Was Deleted", typeof(OrderResource))]
+    [SwaggerResponse(StatusCodes.Status404NotFound, "Order Not Found")]
+    public async Task<ActionResult> DeleteOrder(int id)
+    {
+        var resource = new DeleteOrderResource(id);
+        
+        var deleteOrderCommand = DeleteOrderCommandFromResourceAssembler.ToCommandFromResource(resource);
+        
+        await orderCommandService.Handle(deleteOrderCommand);
+        
+        return NoContent();
+    }
     
     
 }
