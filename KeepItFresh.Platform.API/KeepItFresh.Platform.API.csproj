@@ -30,13 +30,4 @@
         <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="8.11.0"/>
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="Control\Application\Internal\" />
-      <Folder Include="Control\Domain\Services\" />
-      <Folder Include="Control\Infrastructure\Persistence\EFC\Configuration\Extensions\" />
-      <Folder Include="Control\Infrastructure\Persistence\EFC\Repositories\" />
-      <Folder Include="Control\Interfaces\REST\Resources\" />
-      <Folder Include="Control\Interfaces\REST\Transform\" />
-    </ItemGroup>
-
 </Project>
