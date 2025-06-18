@@ -5,7 +5,8 @@ namespace KeepItFresh.Platform.API.Order.interfaces.REST.Transform;
 
 public class DeleteOrderCommandFromResourceAssembler
 {
-    public static DeleteOrderCommand ToCommandFromResource(DeleteOrderResource resource)
+    public static DeleteOrderCommand ToCommandFromResource(
+        DeleteOrderResource resource)
     {
         return new DeleteOrderCommand(resource.Id);
     }

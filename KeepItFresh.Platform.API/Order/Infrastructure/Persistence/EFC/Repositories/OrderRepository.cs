@@ -1,10 +1,10 @@
 using KeepItFresh.Platform.API.Order.Domain.Model.Aggregates;
-using ACME.LearningCenterPlatform.API.Shared.Infrastructure.Persistence.EFC.Configuration;
+using KeepItFresh.Platform.API.Shared.Infrastructure.Persistence.EFC.Configuration;
 using KeepItFresh.Platform.API.Order.Domain.Repositories;
 using KeepItFresh.Platform.API.Shared.Infrastructure.Persistence.EFC.Repositories;
 using Microsoft.EntityFrameworkCore;
 
-namespace KeepItFresh.Platform.API.Shared.Infrastructure.Persistence.EFC.Repositories;
+namespace KeepItFresh.Platform.API.Order.Infrastructure.Persistence.EFC.Repositories;
 
 public class OrderRepository(AppDbContext context)
     : BaseRepository<Orders>(context), IOrderRepository

@@ -1,7 +1,7 @@
-using ACME.LearningCenterPlatform.API.Shared.Infrastructure.Interfaces.ASP.Configuration.Extensions;
+using KeepItFresh.Platform.API.Shared.Infrastructure.Interfaces.ASP.Configuration.Extensions;
 using Microsoft.AspNetCore.Mvc.ApplicationModels;
 
-namespace ACME.LearningCenterPlatform.API.Shared.Infrastructure.Interfaces.ASP.Configuration;
+namespace KeepItFresh.Platform.API.Shared.Infrastructure.Interfaces.ASP.Configuration;
 
 public class KebabCaseRouteNamingConvention : IControllerModelConvention
 {

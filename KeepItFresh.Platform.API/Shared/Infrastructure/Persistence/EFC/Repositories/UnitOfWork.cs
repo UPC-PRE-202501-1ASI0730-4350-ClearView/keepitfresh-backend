@@ -1,5 +1,5 @@
-using ACME.LearningCenterPlatform.API.Shared.Domain.Repositories;
-using ACME.LearningCenterPlatform.API.Shared.Infrastructure.Persistence.EFC.Configuration;
+using KeepItFresh.Platform.API.Shared.Infrastructure.Persistence.EFC.Configuration;
+using KeepItFresh.Platform.API.Shared.Domain.Repositories;
 
 namespace KeepItFresh.Platform.API.Shared.Infrastructure.Persistence.EFC.Repositories;
 
