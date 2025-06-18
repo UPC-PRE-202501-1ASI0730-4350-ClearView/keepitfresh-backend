@@ -21,6 +21,12 @@ public partial class Orders
         this.Name = command.Name;
         this.Price = command.Price;
     }
+
+    public Orders(UpdateOrderCommand command)
+    {
+        this.Name = command.Name;
+        this.Price = command.Price;
+    }
     
     
 }
