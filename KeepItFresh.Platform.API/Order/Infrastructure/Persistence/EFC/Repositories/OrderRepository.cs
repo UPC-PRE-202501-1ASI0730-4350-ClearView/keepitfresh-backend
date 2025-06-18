@@ -14,7 +14,7 @@ public class OrderRepository(AppDbContext context)
         return await Context.Set<Orders>().Where(p => p.Name == name).ToListAsync();
     }
 
-    public async Task<IEnumerable<Orders>?> FindByIdAsync(int id)
+    public async Task<IEnumerable<Orders>> FindByIdAsync(int id)
     {
         return await Context.Set<Orders>().Where(p => p.Id == id).ToListAsync();
     }
