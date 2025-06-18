@@ -11,7 +11,7 @@ namespace KeepItFresh.Platform.API.Profiles.Interfaces.REST;
 
 
 [ApiController]
-[Route("api/profile")]
+[Route("api/v1/[controller]")]
 [Produces(MediaTypeNames.Application.Json)]
 [SwaggerTag("Available Profile Endpoints.")]
 public class ProfilesController(IProfileCommandService profileCommandService,
