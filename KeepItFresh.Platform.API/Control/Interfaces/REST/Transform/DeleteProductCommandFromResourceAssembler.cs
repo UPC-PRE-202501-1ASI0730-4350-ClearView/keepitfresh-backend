@@ -3,7 +3,7 @@ using KeepItFresh.Platform.API.Control.Interfaces.REST.Resources;
 
 namespace KeepItFresh.Platform.API.Control.Interfaces.REST.Transform;
 
-public class DeleteProductCommandFromResourceAssembler
+public class DeleteInventoryCommandFromResourceAssembler
 {
     public static DeleteInventoryCommand ToCommandFromResource(DeleteInventoryResource resource)
     {
