@@ -16,6 +16,8 @@ public class ProductDto
     public string ExpirationDate { get; set; } = default!;
     public string? Image { get; set; }
     public SensorData? Sensor { get; set; }
+    
+    
 
     public class SensorData
     {
