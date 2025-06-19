@@ -1,4 +1,7 @@
 ﻿using KeepItFresh.Platform.API.Sensor.Application.Internal.CommandServices;
+using KeepItFresh.Platform.API.Sensor.Application.Internal.QueryServices;
+using KeepItFresh.Platform.API.Sensor.Domain.Model.Commands;
+using KeepItFresh.Platform.API.Sensor.Domain.Model.Queries;
 using KeepItFresh.Platform.API.Sensor.Interfaces.REST.Resources;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,26 +11,31 @@ namespace KeepItFresh.Platform.API.Sensor.Interfaces.REST;
 [Route("api/sensors")]
 public class SensorsController : ControllerBase
 {
-    private readonly SensorApplicationService _service;
+    private readonly SensorCommandService _commandService;
+    private readonly SensorQueryService _queryService;
 
-    public SensorsController(SensorApplicationService service)
+    public SensorsController(SensorCommandService commandService, SensorQueryService queryService)
     {
-        _service = service;
+        _commandService = commandService;
+        _queryService = queryService;
     }
 
     /// <summary>
     /// Returns products without sensor assigned.
     /// </summary>
     [HttpGet("v1/available-products")]
-    public async Task<IActionResult> GetAvailableProducts() =>
-        Ok(await _service.GetAvailableProductsAsync());
+    public async Task<IActionResult> GetAvailableProducts()
+    {
+        var products = await _queryService.Handle(new GetAvailableProductsQuery());
+        return Ok(products);
+    }
 
-    /// <summary>
-    /// Returns products with sensor assigned.
-    /// </summary>
     [HttpGet("v1/assigned-products")]
-    public async Task<IActionResult> GetAssignedProducts() =>
-        Ok(await _service.GetAssignedProductsAsync());
+    public async Task<IActionResult> GetAssignedProducts()
+    {
+        var products = await _queryService.Handle(new GetAssignedProductsQuery());
+        return Ok(products);
+    }
 
     /// <summary>
     /// Assigns a sensor to a product.
@@ -35,17 +43,16 @@ public class SensorsController : ControllerBase
     [HttpPost("v1/{productId}")]
     public async Task<IActionResult> AssignSensor(int productId, [FromBody] SensorResource resource)
     {
-        await _service.AssignSensorAsync(productId, resource.Type, resource.Status);
+        var command = new AssignSensorCommand(productId, resource.Type, resource.Status);
+        await _commandService.Handle(command);
         return Ok();
     }
 
-    /// <summary>
-    /// Updates a sensor of a product.
-    /// </summary>
     [HttpPut("v1/{productId}")]
     public async Task<IActionResult> UpdateSensor(int productId, [FromBody] SensorResource resource)
     {
-        await _service.UpdateSensorAsync(productId, resource.Type, resource.Status);
+        var command = new UpdateSensorCommand(productId, resource.Type, resource.Status);
+        await _commandService.Handle(command);
         return Ok();
     }
 }
