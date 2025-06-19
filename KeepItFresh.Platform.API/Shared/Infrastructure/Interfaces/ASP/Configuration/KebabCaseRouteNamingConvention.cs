@@ -2,6 +2,7 @@ using KeepItFresh.Platform.API.Shared.Infrastructure.Interfaces.ASP.Configuratio
 using Microsoft.AspNetCore.Mvc.ApplicationModels;
 
 namespace KeepItFresh.Platform.API.Shared.Infrastructure.Interfaces.ASP.Configuration;
+
 public class KebabCaseRouteNamingConvention : IControllerModelConvention
 {
     private static AttributeRouteModel? ReplaceControllerTemplate(SelectorModel selector, string name)
