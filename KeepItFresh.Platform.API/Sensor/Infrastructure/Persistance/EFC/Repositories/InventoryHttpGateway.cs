@@ -13,11 +13,11 @@ public class InventoryHttpGateway : IInventoryGateway
 
     public async Task<List<ProductDto>> GetAllProductsAsync()
     {
-        return await _httpClient.GetFromJsonAsync<List<ProductDto>>("http://localhost:3000/products") ?? new();
+        return await _httpClient.GetFromJsonAsync<List<ProductDto>>("http://localhost:5109/api/v1/products") ?? new();
     }
 
     public async Task UpdateProductAsync(int productId, ProductDto product)
     {
-        await _httpClient.PutAsJsonAsync($"http://localhost:3000/products/{productId}", product);
+        await _httpClient.PutAsJsonAsync("http://localhost:5109/api/v1/products", product);
     }
 }
