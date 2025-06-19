@@ -37,6 +37,10 @@
     <ItemGroup>
       <Folder Include="IAM\Infrastructure\" />
       <Folder Include="Controllers\" />
+      <Folder Include="Subscriptions\" />
+    </ItemGroup>
+    <ItemGroup>
+      <Folder Include="Order\" />
       <Folder Include="Inventory\Domain\Model\Entities\" />
       <Folder Include="Inventory\Domain\Services\" />
       <Folder Include="Inventory\Infrastructure\Persistence\" />
