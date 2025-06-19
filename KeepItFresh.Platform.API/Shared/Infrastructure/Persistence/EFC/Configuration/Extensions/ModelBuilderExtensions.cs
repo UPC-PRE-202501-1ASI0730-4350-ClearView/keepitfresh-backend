@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 
-namespace ACME.LearningCenterPlatform.API.Shared.Infrastructure.Persistence.EFC.Configuration.Extensions;
+namespace KeepItFresh.Platform.API.Shared.Infrastructure.Persistence.EFC.Configuration.Extensions;
 
 /// <summary>
 ///     Model builder extensions
@@ -10,7 +10,8 @@ namespace ACME.LearningCenterPlatform.API.Shared.Infrastructure.Persistence.EFC.
 ///     It includes a method to use the snake case and/or plural naming convention according to an object type.
 ///     It also pluralizes the table names.
 /// </remarks>
-public static class ModelBuilderExtensions
+
+public static class ModelBuilderExtensions 
 {
     /// <summary>
     ///     Use snake case naming convention

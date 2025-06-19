@@ -1,6 +1,6 @@
 using System.Text.RegularExpressions;
 
-namespace ACME.LearningCenterPlatform.API.Shared.Infrastructure.Interfaces.ASP.Configuration.Extensions;
+namespace KeepItFresh.Platform.API.Shared.Infrastructure.Interfaces.ASP.Configuration.Extensions;
 
 public static partial class StringExtensions
 {
@@ -15,7 +15,7 @@ public static partial class StringExtensions
             .Trim()
             .ToLower();
     }
-
+    
     [GeneratedRegex("(?<!^)([A-Z][a-z]|(?<=[a-z])[A-Z])", RegexOptions.Compiled)]
     private static partial Regex KebabCaseRegex();
 }
