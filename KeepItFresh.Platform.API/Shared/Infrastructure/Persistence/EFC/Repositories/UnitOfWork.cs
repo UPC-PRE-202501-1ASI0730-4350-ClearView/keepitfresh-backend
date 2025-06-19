@@ -1,5 +1,5 @@
-using KeepItFresh.Platform.API.Shared.Infrastructure.Persistence.EFC.Configuration;
 using KeepItFresh.Platform.API.Shared.Domain.Repositories;
+using KeepItFresh.Platform.API.Shared.Infrastructure.Persistence.EFC.Configuration;
 
 namespace KeepItFresh.Platform.API.Shared.Infrastructure.Persistence.EFC.Repositories;
 
