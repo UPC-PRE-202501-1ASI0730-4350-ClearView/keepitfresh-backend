@@ -35,6 +35,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <Folder Include="IAM\Infrastructure\" />
       <Folder Include="Controllers\" />
       <Folder Include="Inventory\Domain\Model\Entities\" />
       <Folder Include="Inventory\Domain\Services\" />
