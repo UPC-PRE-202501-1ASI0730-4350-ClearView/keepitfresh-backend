@@ -1,4 +1,4 @@
-using ACME.LearningCenterPlatform.API.Shared.Domain.Repositories;
+using KeepItFresh.Platform.API.Shared.Domain.Repositories;
 using KeepItFresh.Platform.API.Subscriptions.Domain.Model.Aggregates;
 using System;
 using System.Threading.Tasks;

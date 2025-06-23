@@ -1,4 +1,4 @@
-using ACME.LearningCenterPlatform.API.Shared.Infrastructure.Persistence.EFC.Configuration;
+using KeepItFresh.Platform.API.Shared.Infrastructure.Persistence.EFC.Configuration;
 using KeepItFresh.Platform.API.Subscriptions.Domain.Model.Aggregates;
 using KeepItFresh.Platform.API.Subscriptions.Domain.Repositories;
 using KeepItFresh.Platform.API.Shared.Infrastructure.Persistence.EFC.Repositories;
