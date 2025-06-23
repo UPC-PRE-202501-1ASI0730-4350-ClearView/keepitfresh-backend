@@ -26,7 +26,7 @@ public class AppDbContext(DbContextOptions options) : DbContext(options)
         
         
         builder.Entity<Orders>()
-            .HasKey(o => o.Id);  // Specify Id as primary key
+            .HasKey(o => o.Id);  
         
         base.OnModelCreating(builder);
 
