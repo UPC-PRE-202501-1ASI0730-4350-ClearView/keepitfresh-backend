@@ -2,7 +2,8 @@ using KeepItFresh.Platform.API.Order.Domain.Model.Commands;
 
 namespace KeepItFresh.Platform.API.Order.Domain.Model.Aggregates;
 
-public partial class Orders
+public partial class
+    Orders
 {
     public int Id { get; }
     public string Name { get; private set; }
