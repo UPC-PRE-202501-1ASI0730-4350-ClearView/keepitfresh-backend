@@ -1,4 +1,4 @@
-using ACME.LearningCenterPlatform.API.Shared.Domain.Repositories;
+using KeepItFresh.Platform.API.Shared.Domain.Repositories;
 using KeepItFresh.Platform.API.Shared.Infrastructure.Persistence.EFC.Configuration;
 using Microsoft.EntityFrameworkCore;
 
