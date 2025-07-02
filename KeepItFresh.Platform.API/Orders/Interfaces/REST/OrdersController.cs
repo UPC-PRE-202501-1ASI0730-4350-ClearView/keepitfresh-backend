@@ -11,6 +11,7 @@ namespace KeepItFresh.Platform.API.Order.Interfaces.REST;
 
 [ApiController]
 [Route("api/v1/[controller]")]
+[SwaggerTag("Operations for managing customer orders")]
 [Produces(MediaTypeNames.Application.Json)]
 [Tags("Orders")]
 public class OrdersController (IOrderCommandService orderCommandService, IOrderQueryServices orderQueryService) : ControllerBase
