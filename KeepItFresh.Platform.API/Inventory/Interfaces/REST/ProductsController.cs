@@ -13,6 +13,8 @@ namespace KeepItFresh.Platform.API.Inventory.Interfaces.REST;
 
 [ApiController]
 [Route("api/v1/[controller]")]
+[SwaggerTag("Operations for managing products and assigning sensors")]
+
 public class ProductsController : ControllerBase
 {
     private readonly AppDbContext _context;
