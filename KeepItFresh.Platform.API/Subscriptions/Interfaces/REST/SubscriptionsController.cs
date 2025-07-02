@@ -9,7 +9,7 @@ using Swashbuckle.AspNetCore.Annotations;
 namespace KeepItFresh.Platform.API.Subscriptions.Interfaces.REST.Controllers;
 
 [ApiController]
-[Route("api/v1/subscriptions")]
+[Route("api/v1/[controller]")]
 public class SubscriptionsController : ControllerBase
 {
     private readonly ISubscriptionCommandService _commandService;
@@ -22,18 +22,18 @@ public class SubscriptionsController : ControllerBase
     }
 
     [HttpPost]
-    [SwaggerOperation(Summary = "Registrar una nueva suscripción")]
+    [SwaggerOperation(Summary = "Register a new subscription")]
     public async Task<IActionResult> Create([FromBody] CreateSubscriptionResource resource)
     {
         var command = CreateSubscriptionCommandFromResourceAssembler.ToCommandFromResource(resource);
         var result = await _commandService.Handle(command);
-        if (result == null) return BadRequest("Error al crear la suscripción");
+        if (result == null) return BadRequest("Error creating subscription");
 
         return CreatedAtAction(nameof(GetById), new { id = result.UserId }, SubscriptionResourceFromEntityAssembler.ToResourceFromEntity(result));
     }
 
     [HttpGet("{id:guid}")]
-    [SwaggerOperation(Summary = "Obtener una suscripción por ID de usuario")]
+    [SwaggerOperation(Summary = "Get a subscription by user ID")]
     public async Task<IActionResult> GetById(Guid id)
     {
         var result = await _queryService.Handle(new GetSubscriptionByUserIdQuery(id));
@@ -41,10 +41,10 @@ public class SubscriptionsController : ControllerBase
     }
 
     [HttpPut("{id:guid}")]
-    [SwaggerOperation(Summary = "Actualizar una suscripción existente")]
+    [SwaggerOperation(Summary = "Update an existing subscription")]
     public async Task<IActionResult> Update(Guid id, [FromBody] UpdateSubscriptionResource resource)
     {
-        if (id != resource.UserId) return BadRequest("El ID no coincide");
+        if (id != resource.UserId) return BadRequest("ID does not match");
 
         var command = UpdateSubscriptionCommandFromResourceAssembler.ToCommandFromResource(resource);
         var result = await _commandService.Handle(command);
