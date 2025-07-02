@@ -10,6 +10,8 @@ namespace KeepItFresh.Platform.API.Subscriptions.Interfaces.REST.Controllers;
 
 [ApiController]
 [Route("api/v1/[controller]")]
+[SwaggerTag("Manage user subscriptions")]
+
 public class SubscriptionsController : ControllerBase
 {
     private readonly ISubscriptionCommandService _commandService;
