@@ -5,12 +5,15 @@ using KeepItFresh.Platform.API.Order.Domain.Repositories;
 using KeepItFresh.Platform.API.Order.Domain.Services;
 using KeepItFresh.Platform.API.Order.Infrastructure.Persistence.EFC.Repositories;
 using KeepItFresh.Platform.API.Shared.Domain.Repositories;
+using KeepItFresh.Platform.API.Shared.Infrastructure.Interfaces.ASP.Configuration;
 using KeepItFresh.Platform.API.Shared.Infrastructure.Persistence.EFC.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddRouting(options => options.LowercaseUrls = true);
+builder.Services.AddControllers(options => options.Conventions.Add(new KebabCaseRouteNamingConvention()));
 // Add services to the container.
 
 builder.Services.AddSwaggerGen(options => { options.EnableAnnotations(); });
@@ -56,7 +59,6 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
 
 
 app.UseHttpsRedirection();

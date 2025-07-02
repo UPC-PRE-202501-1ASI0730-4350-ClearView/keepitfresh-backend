@@ -4,11 +4,13 @@ using KeepItFresh.Platform.API.Sensor.Domain.Model.Commands;
 using KeepItFresh.Platform.API.Sensor.Domain.Model.Queries;
 using KeepItFresh.Platform.API.Sensor.Interfaces.REST.Resources;
 using Microsoft.AspNetCore.Mvc;
+using Swashbuckle.AspNetCore.Annotations;
 
 namespace KeepItFresh.Platform.API.Sensor.Interfaces.REST;
 
 [ApiController]
-[Route("api/sensors")]
+[Route("api/v1/[controller]")]
+[SwaggerTag("Available sensors and products with sensors")]
 public class SensorsController : ControllerBase
 {
     private readonly SensorCommandService _commandService;
@@ -23,14 +25,14 @@ public class SensorsController : ControllerBase
     /// <summary>
     /// Returns products without sensor assigned.
     /// </summary>
-    [HttpGet("v1/available-products")]
+    [HttpGet("available-products")]
     public async Task<IActionResult> GetAvailableProducts()
     {
         var products = await _queryService.Handle(new GetAvailableProductsQuery());
         return Ok(products);
     }
 
-    [HttpGet("v1/assigned-products")]
+    [HttpGet("assigned-products")]
     public async Task<IActionResult> GetAssignedProducts()
     {
         var products = await _queryService.Handle(new GetAssignedProductsQuery());
@@ -40,7 +42,7 @@ public class SensorsController : ControllerBase
     /// <summary>
     /// Assigns a sensor to a product.
     /// </summary>
-    [HttpPost("v1/{productId}")]
+    [HttpPost("{productId}")]
     public async Task<IActionResult> AssignSensor(int productId, [FromBody] SensorResource resource)
     {
         var command = new AssignSensorCommand(productId, resource.Type, resource.Status);
@@ -48,7 +50,7 @@ public class SensorsController : ControllerBase
         return Ok();
     }
 
-    [HttpPut("v1/{productId}")]
+    [HttpPut("{productId}")]
     public async Task<IActionResult> UpdateSensor(int productId, [FromBody] SensorResource resource)
     {
         var command = new UpdateSensorCommand(productId, resource.Type, resource.Status);

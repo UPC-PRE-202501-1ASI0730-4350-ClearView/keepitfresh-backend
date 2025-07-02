@@ -9,7 +9,7 @@ using Swashbuckle.AspNetCore.Annotations;
 namespace KeepItFresh.Platform.API.Subscriptions.Interfaces.REST.Controllers;
 
 [ApiController]
-[Route("api/v1/[controller]")]
+[Route("api/v1/subscriptions")]
 public class SubscriptionsController : ControllerBase
 {
     private readonly ISubscriptionCommandService _commandService;

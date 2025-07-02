@@ -13,7 +13,7 @@ namespace KeepItFresh.Platform.API.Order.Interfaces.REST;
 [Route("api/v1/[controller]")]
 [Produces(MediaTypeNames.Application.Json)]
 [Tags("Orders")]
-public class OrderController (IOrderCommandService orderCommandService, IOrderQueryServices orderQueryService) : ControllerBase
+public class OrdersController (IOrderCommandService orderCommandService, IOrderQueryServices orderQueryService) : ControllerBase
 {
     [HttpPost]
     [SwaggerOperation(
